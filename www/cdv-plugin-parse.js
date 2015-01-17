@@ -47,9 +47,26 @@ var parsePlugin = {
             'subscribe',
             [ channel ]
         );
+
+
     },
 
+    subscribe2: function(channel, successCallback, errorCallback) {
+
+        cordova.exec(
+            successCallback,
+            errorCallback,
+            'ParsePlugin',
+            'subscribe2',
+            [ channel ]
+        );
+
+
+
+    }
+
     unsubscribe: function(channel, successCallback, errorCallback) {
+
         cordova.exec(
             successCallback,
             errorCallback,
