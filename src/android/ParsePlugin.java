@@ -1,5 +1,6 @@
 package org.apache.cordova.core;
 
+import android.util.Log
 import java.util.Set;
 
 import org.apache.cordova.CallbackContext;
