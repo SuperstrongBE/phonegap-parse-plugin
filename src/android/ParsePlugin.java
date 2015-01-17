@@ -33,6 +33,7 @@ public class ParsePlugin extends CordovaPlugin {
 
         if (action.equals(ACTION_SUBSCRIBE_PUSH)){
 
+            Log.d("sprstr",'subscribe push is called');
             return true;
 
         }
@@ -46,10 +47,7 @@ public class ParsePlugin extends CordovaPlugin {
             return true;
         }
         if (action.equals(ACTION_SUBSCRIBE)) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setMessage(args.getString(0))
             this.subscribe(args.getString(0), callbackContext);
-             return builder.create();
             return true;
         }
         if (action.equals(ACTION_UNSUBSCRIBE)) {

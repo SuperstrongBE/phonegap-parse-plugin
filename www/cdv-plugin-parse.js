@@ -63,7 +63,7 @@ var parsePlugin = {
 
 
 
-    }
+    },
 
     unsubscribe: function(channel, successCallback, errorCallback) {
 
