@@ -33,11 +33,10 @@ public class ParsePlugin extends CordovaPlugin {
 
         if (action.equals(ACTION_SUBSCRIBE_PUSH)){
 
-            Log.d("sprstr",'subscribe push is called');
+            this.subscribe_push(args.getString (0),callbackContext);
             return true;
 
         }
-
         if (action.equals(ACTION_GET_INSTALLATION_OBJECT_ID)) {
             this.getInstallationObjectId(callbackContext);
             return true;
@@ -100,6 +99,15 @@ public class ParsePlugin extends CordovaPlugin {
             }
         });
     }
+
+    private void subscribe_push(final String channel, final CallbackContext callbackContext) {
+            cordova.getThreadPool().execute(new Runnable() {
+                public void run() {
+                    Log.d("SPRSTR",channel);
+                    callbackContext.success();
+                }
+            });
+        }
 
     private void subscribe(final String channel, final CallbackContext callbackContext) {
         cordova.getThreadPool().execute(new Runnable() {
